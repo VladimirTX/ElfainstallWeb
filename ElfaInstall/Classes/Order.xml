@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Order>
+	<Store>
+		<Name>NPK</Name>
+		<SaleDate>11/16/2009</SaleDate>
+		<OrderNumber>022283376</OrderNumber>
+		<Planner>davida</Planner>
+	</Store>
+	<Customer>
+		<FirstName>David</FirstName>
+		<MiddleName></MiddleName>
+		<LastName>Isadork</LastName>
+		<Address1>500 Freeport Pkwy</Address1>
+		<Address2></Address2>
+		<City>Coppell</City>
+		<State>TX</State>
+		<Zip>75019</Zip>
+		<HomePhone>(214) 293-8165</HomePhone>
+		<OtherPhone>(214) 555-1212</OtherPhone>
+		<Email></Email>
+	</Customer>
+	<Install>
+		<InstallDate>11/27/2009</InstallDate>
+		<InstallWindowStart>8:00AM</InstallWindowStart>
+		<InstallWindowEnd>9:30AM</InstallWindowEnd>
+		<DeliveryOption80>N</DeliveryOption80>
+		<FulfillmentType>CustomerPickup</FulfillmentType>
+		<OutsideDeliveryDate>11/24/2009</OutsideDeliveryDate>
+		<OutsideDeliveryWindowStart>8:00AM</OutsideDeliveryWindowStart>
+		<CustomerPickupDate>11/24/2009</CustomerPickupDate>
+		<CustomerPickupAppointment>8:45AM</CustomerPickupAppointment>
+		<Demolition>N</Demolition>
+		<ScopeOfDemo>Basic</ScopeOfDemo>
+		<SolutionDescription></SolutionDescription>
+		<AdditionalComments></AdditionalComments>
+	</Install>
+	<Charges>
+		<RetailPrice>19.99</RetailPrice>
+		<AdditionalDemo>0.00</AdditionalDemo>
+		<Total>19.99</Total>
+	</Charges>
+</Order>
+

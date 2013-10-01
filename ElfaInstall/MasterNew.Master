@@ -1,0 +1,262 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterNew.master.cs" Inherits="ElfaInstall.MasterNew" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="Stylesheet.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript">
+<!--
+        function popup(mylink, windowname) {
+            if (!window.focus) return true;
+            var href;
+            if (typeof (mylink) == 'string')
+                href = mylink;
+            else
+                href = mylink.href;
+            window.open(href, windowname, 'width=600,height=550,scrollbars=yes');
+            return false;
+        }
+//-->
+        </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <telerik:RadScriptManager  ID="ScriptManager" runat="server" />
+        <telerik:RadWindowManager ID="WindowManager" runat="server" />
+        <table style="width: 960px;" cellpadding="0" cellspacing="0">
+            <tr>
+                <td colspan="2" style=" height:30;" align="left">
+                    <asp:Image ID="imgLogo" runat="server" ImageUrl="~/images/Master_logo.gif" />
+                </td>
+            </tr>
+            <tr style="height:20px; vertical-align:top">
+                <td>
+                    <asp:Panel ID="pnlMenu" runat="server" Height="15px">
+                        <telerik:RadMenu ID="MenuAdmin" runat="server" Font-Bold="True" Height="15px" 
+                            Visible="False">
+                            <Items>
+                                <telerik:RadMenuItem runat="server" Text="Orders" Font-Size="Larger">
+                                    <Items>
+                                        <telerik:RadMenuItem runat="server" Text="Order List" Font-Size="Larger" NavigateUrl="~/Orders.aspx">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Text="Search" Font-Size="Larger" NavigateUrl="~/Selection.aspx">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Text="New Order" Font-Size="Larger" NavigateUrl="~/NewSelection.aspx">
+                                        </telerik:RadMenuItem>
+                                    </Items>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem runat="server" Text="Schedule" Font-Size="Larger" 
+                                    NavigateUrl="~/RegionSelection.aspx">
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem runat="server" Text="Installation Log" Font-Size="Larger" 
+                                    NavigateUrl="~/InstallLog.aspx">
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem runat="server" Text="Organizer Log" Font-Size="Larger">
+                                    <Items>
+                                        <telerik:RadMenuItem runat="server" Text="Open Orders" Font-Size="Larger" NavigateUrl="~/OrganizerLog.aspx">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Text="Completed Orders" Font-Size="Larger" NavigateUrl="~/OrganizerPay.aspx">
+                                        </telerik:RadMenuItem>
+                                    </Items>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem runat="server" Text="Reports" Font-Size="Larger">
+                                    <Items>
+                                        <telerik:RadMenuItem runat="server" Text="10 days non-payment" Font-Size="Larger" NavigateUrl="~/Reports/Non_payment.aspx">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Text="Orders by Details" Font-Size="Larger" NavigateUrl="~/Reports/SummaryReport.aspx">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Text="Completed Orders Summary" Font-Size="Larger" NavigateUrl="~/Reports/ReportCompleted.aspx">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Font-Size="Larger" 
+                                            Text="Created Orders Summary" NavigateUrl="~/Reports/Report_Created.aspx">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Font-Size="Larger" 
+                                            Text="YTD Comperative Analysis" NavigateUrl="~/Reports/YTDSumm.aspx">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Font-Size="Larger" 
+                                            Text="TCS Comparative Analysis" NavigateUrl="~/Reports/TCSSummary.aspx">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Font-Size="Larger" 
+                                            Text="Completed Orders TCS" NavigateUrl="~/Reports/RepCompletedTCS.aspx">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Font-Size="Larger" 
+                                            Text="Deleted Orders" NavigateUrl="~/Reports/DeletedOrders.aspx" Target="_blank">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Font-Size="Larger" 
+                                            Text="Installers Feedback" NavigateUrl="~/Reports/FeedbackReport.aspx" Target="_blank">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem ID="mnuLogPay" runat="server" Text="Weekly Pay Report" Font-Size="Larger" 
+                                            NavigateUrl="~/Reports/PayReport.aspx" Target="_blank">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Text="Pay By Closing Date Report" Font-Size="Larger" 
+                                            NavigateUrl="~/Reports/PayByClosing.aspx" Target="_blank">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Font-Size="Larger" 
+                                            Text="Missing/Damaged Product" NavigateUrl="~/Reports/ProductProblems.aspx">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Font-Size="Larger" 
+                                            Text="Not Picked Up Orders" NavigateUrl="~/Reports/NotPickedUp.aspx" Target="_blank">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Font-Size="Larger" Text="Additional Orders" 
+                                            NavigateUrl="~/Reports/AdditionalOrders.aspx" Target="_blank">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Font-Size="Larger" Text="Service Orders" 
+                                            NavigateUrl="~/Reports/ServiceOrders.aspx" Target="_blank">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Font-Size="Larger" Text="Orders with Delivery" 
+                                            NavigateUrl="~/Reports/DeliveryOrders.aspx" Target="_blank">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Font-Size="Larger" Text="Orders Financial Details" 
+                                            NavigateUrl="~/Reports/OrderFinancial.aspx">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Font-Size="Larger" Text="Region Open Orders" 
+                                            NavigateUrl="~/Reports/RegionMessages.aspx">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Font-Size="Larger" Text="Accommodation" 
+                                            NavigateUrl="~/Reports/Accomodation.aspx">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Font-Size="Larger" Text="Deducted Orders" 
+                                            NavigateUrl="~/Reports/Deductions.aspx" Target="_blank">
+                                        </telerik:RadMenuItem>
+                                    </Items>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem runat="server" Text="Maintenance" Font-Size="Larger">
+                                    <Items>
+                                        <telerik:RadMenuItem runat="server" Text="Users" Font-Size="Larger" NavigateUrl="~/UserList.aspx">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Text="Stores" Font-Size="Larger" NavigateUrl="~/StoreList.aspx">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Text="Vendors" Font-Size="Larger" NavigateUrl="~/VendorList.aspx">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Text="Markets" Font-Size="Larger" NavigateUrl="~/MarketList.aspx">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Text="Regions" Font-Size="Larger" NavigateUrl="~/RegionList.aspx">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Text="Organizers" Font-Size="Larger" NavigateUrl="~/OrganizerList.aspx">
+                                        </telerik:RadMenuItem>
+                                    </Items>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem runat="server" Text="Other" Font-Size="Larger">
+                                    <Items>
+                                        <telerik:RadMenuItem runat="server" Text="Installation Request" Font-Size="Larger" Target="_blank" NavigateUrl="~/OrderForm.aspx">
+                                        </telerik:RadMenuItem>
+<%--                                        <telerik:RadMenuItem runat="server" Text="View Test Orders" Font-Size="Larger">
+                                        </telerik:RadMenuItem>--%>
+                                    </Items>
+                                </telerik:RadMenuItem>
+<%--                                <telerik:RadMenuItem runat="server" Text="Demos" Font-Size="Larger">
+                                    <Items>
+                                        <telerik:RadMenuItem runat="server" Text="The Order Form" Font-Size="Larger"
+                                             NavigateUrl="~/Demos/TheOrderForm/Demo 1 - Order Form.html" Target="_blank">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Text="Scheduling" Font-Size="Larger" 
+                                            NavigateUrl="~/Demos/Scheduling/Revised Demo 2.html" Target="_blank">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Text="Trouble Log" Font-Size="Larger"
+                                             NavigateUrl="Demos/TroubleLogs/Demo%203%20-%20Prod%20&%20Design%20Issues.html" Target="_blank">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Text="Fee and Billing Issues" Font-Size="Larger"
+                                             NavigateUrl="~/Demos/Demo4/Demo%204_final.html" Target="_blank">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Text="Managing Your Account" Font-Size="Larger" 
+                                            NavigateUrl="~/Demos/Managing Your Account/Order Management.html" Target="_blank">
+                                        </telerik:RadMenuItem>
+                                    </Items>
+                                </telerik:RadMenuItem>--%>
+                            </Items>
+                        </telerik:RadMenu>
+                        <telerik:RadMenu ID="MenuRegion" runat="server" Height="15px"  Visible="False">
+                            <Items>
+                                <telerik:RadMenuItem runat="server" Text="Orders" Font-Size="Larger">
+                                    <Items>
+                                        <telerik:RadMenuItem runat="server" Text="Open Order" Font-Size="Larger" NavigateUrl="~/OrdersR.aspx">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Text="Orders Search" Font-Size="Larger" NavigateUrl="~/RegionSearch.aspx">
+                                        </telerik:RadMenuItem>
+<%--                                        <telerik:RadMenuItem runat="server" Text="New Order" Font-Size="Larger" NavigateUrl="~/NewSelection.aspx">
+                                        </telerik:RadMenuItem>--%>
+                                    </Items>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem runat="server" Text="Schedule" Font-Size="Larger" 
+                                    NavigateUrl="~/Schedule.aspx">
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem runat="server" Text="Installation Log" Font-Size="Larger" NavigateUrl="~/InstallRegion.aspx">
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem runat="server" Text="Installation Request" Font-Size="Larger" Target="_blank" NavigateUrl="~/OrderForm.aspx">
+                                </telerik:RadMenuItem>
+<%--                                <telerik:RadMenuItem runat="server" Text="Demos" Font-Size="Larger">
+                                    <Items>
+                                        <telerik:RadMenuItem runat="server" Text="Managing Your Account" Font-Size="Larger" 
+                                            NavigateUrl="~/Demos/Managing Your Account/Order Management.html" Target="_blank">
+                                        </telerik:RadMenuItem>
+                                    </Items>
+                                </telerik:RadMenuItem>--%>
+                            </Items>
+                        </telerik:RadMenu>
+                        <telerik:RadMenu ID="MenuOrganizer" runat="server" Height="15px"  Visible="False">
+                            <Items>
+                                <telerik:RadMenuItem runat="server" Text="Orders" Font-Size="Larger">
+                                    <Items>
+                                        <telerik:RadMenuItem runat="server" Text="Open Orders" Font-Size="Larger" NavigateUrl="~/OrdersO.aspx" />
+                                        <telerik:RadMenuItem runat="server" Text="New ORG Order" Font-Size="Larger" NavigateUrl="~/OrganizerOrder.aspx" />
+                                    </Items>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem runat="server" Text="Organizer Log" Font-Size="Larger">
+                                    <Items>
+                                        <telerik:RadMenuItem runat="server" Text="Open Orders" Font-Size="Larger" NavigateUrl="~/OrganizerLog.aspx">
+                                        </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Text="Completed Orders" Font-Size="Larger" NavigateUrl="~/OrganizerPay.aspx">
+                                        </telerik:RadMenuItem>
+                                    </Items>
+                                </telerik:RadMenuItem>
+                            </Items>
+                        </telerik:RadMenu>
+                        <telerik:RadMenu ID="MenuVendor" runat="server" Height="15px"  Visible="False">
+                            <Items>
+                                <telerik:RadMenuItem runat="server" Text="Open Orders" Font-Size="Larger" 
+                                    NavigateUrl="~/VendorOrders.aspx">
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem runat="server" Text="Schedule" Font-Size="Larger" 
+                                    NavigateUrl="~/Calendar.aspx">
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem runat="server" Text="Installation Log" Font-Size="Larger" 
+                                    NavigateUrl="~/VendorInstall.aspx">
+                                </telerik:RadMenuItem>
+<%--                                <telerik:RadMenuItem runat="server" Text="Demos" Font-Size="Larger">
+                                    <Items>
+                                        <telerik:RadMenuItem runat="server" Text="Managing Your Account" Font-Size="Larger" 
+                                            NavigateUrl="~/Demos/Managing Your Account/Order Management.html" Target="_blank">
+                                        </telerik:RadMenuItem>
+                                    </Items>
+                                </telerik:RadMenuItem>--%>
+                            </Items>
+                        </telerik:RadMenu>
+                        <telerik:RadMenu ID="MenuLogOff" runat="server" Height="15px">
+                            <Items>
+                                <telerik:RadMenuItem runat="server" Text="Log Off" Font-Size="Larger" 
+                                    NavigateUrl="~/Login.aspx">
+                                </telerik:RadMenuItem>
+                            </Items>
+                        </telerik:RadMenu>
+                    </asp:Panel>
+                </td>
+                <td style="font-size:smaller; vertical-align:bottom">
+                    Menu Status:&nbsp; <asp:Label ID="lblStatus" runat="server"></asp:Label>
+                </td>
+            </tr>
+            <tr><td colspan="2"><hr style=" color:Red" /></td></tr>
+        </table>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

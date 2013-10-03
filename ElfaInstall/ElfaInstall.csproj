@@ -145,6 +145,7 @@
     <Content Include="Reports\OrderFinExcel.aspx" />
     <Content Include="Reports\OrderInfo.aspx" />
     <Content Include="Reports\PayByClosing.aspx" />
+    <Content Include="Reports\PayByType.aspx" />
     <Content Include="Reports\PayReport.aspx" />
     <Content Include="Reports\PrintOrgInvoice.aspx" />
     <Content Include="Reports\ProductProblems.aspx" />
@@ -603,6 +604,13 @@
     <Compile Include="Reports\PayByClosing.aspx.designer.cs">
       <DependentUpon>PayByClosing.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reports\PayByType.aspx.cs">
+      <DependentUpon>PayByType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\PayByType.aspx.designer.cs">
+      <DependentUpon>PayByType.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reports\PayReport.aspx.cs">
       <DependentUpon>PayReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -917,7 +925,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-      <UserProperties UseJQuerySupport="False" UseAjaxifiedTemplates="False" />
+      <UserProperties UseAjaxifiedTemplates="False" UseJQuerySupport="False" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

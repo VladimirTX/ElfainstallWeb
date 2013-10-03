@@ -368,13 +368,16 @@ namespace ElfaInstall
             if (hfVendor.Value == "true")
             {
                 int newVendor = int.Parse(ddlInstallers.SelectedValue);
-                if (newVendor != _vendorID  && newVendor>0)
+                if (newVendor != _vendorID) //  && newVendor>0)
                 {
                     orderInfo.AssignVendor(OrderID, newVendor);
-                    SendEmail();
+                    if (newVendor > 0) SendEmail();
                     string tmpComm = txtOffice.Text.Trim();
                     if (tmpComm == "") _comments = "";
-                    _comments = _comments + " Vendor assigned " + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString() + " by " + _userName + "<br/>";
+                    if (newVendor > 0)
+                        _comments = _comments + " Vendor assigned " + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString() + " by " + _userName + "<br/>";
+                    else
+                        _comments = _comments + " Vendor removed " + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString() + " by " + _userName + "<br/>";
                 }
             }
             orderInfo.NewUpdateOrder(OrderID, _pickedUp, _installed,
@@ -385,7 +388,7 @@ namespace ElfaInstall
             orderInfo.UpdateInstallAddress(OrderID, txtAddr1.Text, txtAddr2.Text, txtCity.Text, 
                 ddlStates.SelectedValue,txtZip.Text);
             orderInfo.UpdateInstallName(OrderID,txtFname.Text.Trim(),"",txtLname.Text.Trim());
-            orderInfo.SaveDiscount(OrderID,int.Parse(ddlReasons.SelectedValue));
+            orderInfo.SaveDiscount(OrderID,int.Parse(ddlReasons.SelectedValue),0);
 
             if (_status == 5 && _oldStatus < 5)
             {

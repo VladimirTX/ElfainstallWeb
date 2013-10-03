@@ -98,6 +98,9 @@
                                         <telerik:RadMenuItem runat="server" Text="Pay By Closing Date Report" Font-Size="Larger" 
                                             NavigateUrl="~/Reports/PayByClosing.aspx" Target="_blank">
                                         </telerik:RadMenuItem>
+                                        <telerik:RadMenuItem runat="server" Text="Pay by Payment Type Report" Font-Size="Larger" 
+                                            NavigateUrl="~/Reports/PayByType.aspx" Target="_blank">
+                                        </telerik:RadMenuItem>
                                         <telerik:RadMenuItem runat="server" Font-Size="Larger" 
                                             Text="Missing/Damaged Product" NavigateUrl="~/Reports/ProductProblems.aspx">
                                         </telerik:RadMenuItem>

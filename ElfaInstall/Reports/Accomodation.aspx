@@ -59,7 +59,7 @@
                 </asp:GridView>
             </td>
         </tr>
-        <tr><td colspan="4" class="td14Bold">Refunds</td></tr>
+<%--        <tr><td colspan="4" class="td14Bold">Refunds</td></tr>
         <tr>
             <td colspan="4">
                 <asp:GridView runat="Server" ID="grdRefunds" Width="850px" 
@@ -92,7 +92,7 @@
                     </Columns>
                 </asp:GridView>
             </td>
-        </tr>
+        </tr>--%>
         <tr><td colspan="4" class="td14Bold">Adjustments</td></tr>
         <tr>
             <td colspan="4">
@@ -119,6 +119,9 @@
                         </asp:BoundField>
                         <asp:BoundField DataField="Amount" HeaderText="Amount">
                         <ItemStyle Width="50px" HorizontalAlign="Right" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="DiscProc" HeaderText="%" HeaderStyle-HorizontalAlign="Center">
+                        <ItemStyle Width="30px" HorizontalAlign="Right" />
                         </asp:BoundField>
                         <asp:BoundField DataField="Reason" HeaderText="Reason">
                         <ItemStyle Width="325px" />

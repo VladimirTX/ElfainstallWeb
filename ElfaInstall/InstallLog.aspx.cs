@@ -13,7 +13,7 @@ namespace ElfaInstall
         decimal _delivery, _ordPrice, _instPrice, _demoPrice, _milesPrice, _miscPrice, _tipPrice, _vendorDue, _promoPrice, _purchasePrice, _parkingPrice, _payProc, _tax;
         SqlDataReader drInfo;
         DateTime orderDate, vendorDate, paymentDay;
-        string status, vendorName, customer, solution, comments, checkNumb, _state, _city, _zip, _storeCode;
+        string status, vendorName, customer, solution, comments, checkNumb, _state, _city, _zip, _storeCode, _discProc;
         bool filter, _confirmed, _bySurvey;
         public bool Promo;
 
@@ -148,6 +148,7 @@ namespace ElfaInstall
                 ddlProcent.SelectedValue = (_payProc/100).ToString();
             }
             ddlReasons.SelectedValue = _discountID.ToString();
+            ddlDiscProc.SelectedValue = _discProc;
         }
         void BindDataGrid()
         {
@@ -214,6 +215,7 @@ namespace ElfaInstall
             _zip = drInfo["zip"].ToString().Trim();
             _storeCode = drInfo["StoreCode"].ToString();
             _discountID = int.Parse(drInfo["DiscountID"].ToString().Trim());
+            _discProc = drInfo["DiscProc"].ToString().Trim();
             drInfo.Close();
             Promo = true;
         }
@@ -273,7 +275,7 @@ namespace ElfaInstall
             orderInfo.NewUpdateOrder(orderID, true, true,
                 paymentDay, orderStatus, solution, "", _instPrice, _delivery, _demoPrice, _milesPrice,
                 _miscPrice, _parkingPrice, _tipPrice, _promoPrice, _tax, _ordPrice, _confirmed, checkNumb,_bySurvey);
-            orderInfo.SaveDiscount(orderID, int.Parse(ddlReasons.SelectedValue));
+            orderInfo.SaveDiscount(orderID, int.Parse(ddlReasons.SelectedValue),int.Parse(ddlDiscProc.SelectedValue));
 
             //pnlEdit.Visible = false;
             BindDataGrid();

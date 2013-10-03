@@ -441,7 +441,7 @@
                         <asp:ListItem Value="EDS">Ellen DeGeneres Show</asp:ListItem>
                         <asp:ListItem Value="FFE">Fall for elfa</asp:ListItem>
                         <asp:ListItem Value="JFU">Just for You</asp:ListItem>
-                        <asp:ListItem Value="MID">Man in Desert</asp:ListItem>
+                        <asp:ListItem Value="MID">VIP</asp:ListItem>
                         <asp:ListItem Value="PRM">PR</asp:ListItem>
                         <%--                        <asp:ListItem Value="STC">Store Comp</asp:ListItem>--%>
                     </asp:DropDownList>

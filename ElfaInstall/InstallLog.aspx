@@ -191,7 +191,15 @@
                                 <td class="tdmain">Adjustment</td>
                                 <td  align="left" class="tdmain">
                                     $<asp:TextBox ID="txtPromoPrice" runat="server" Width="80px"></asp:TextBox>
-                                    <asp:DropDownList ID="ddlReasons" runat="server">
+                                    <asp:DropDownList ID="ddlDiscProc" runat="server">
+                                        <asp:ListItem Value="0">0%</asp:ListItem>
+                                        <asp:ListItem Value="55">55%</asp:ListItem>
+                                        <asp:ListItem Value="60">60%</asp:ListItem>
+                                        <asp:ListItem Value="65">65%</asp:ListItem>
+                                        <asp:ListItem Value="75">75%</asp:ListItem>
+                                        <asp:ListItem Value="100">100%</asp:ListItem>
+                                    </asp:DropDownList>
+                                    <br /><asp:DropDownList ID="ddlReasons" runat="server">
                                     </asp:DropDownList>
                                 </td>
                             </tr>

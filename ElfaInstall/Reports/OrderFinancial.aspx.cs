@@ -130,7 +130,7 @@ namespace ElfaInstall.Reports
                         case "Just for You":
                             sType = " AND Options = ''JFU'' ";
                             break;
-                        case "Man in Desert":
+                        case "VIP":
                             sType = " AND Options = ''MID'' ";
                             break;
                         case "Ellen DeGeneres Show":

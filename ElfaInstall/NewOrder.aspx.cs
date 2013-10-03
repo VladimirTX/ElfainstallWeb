@@ -53,24 +53,26 @@ namespace ElfaInstall
                 }
                 _drInfo.Close();
                 lblStore.Text = _storeName;
-
                 //txtEventDate.Text = DateTime.Today.ToShortDateString();
                 rdpEventDate.SelectedDate=null;
                 FillStates();
-                if (_delivery > 0) cb1.Checked = true;
-                //{ lblDelivery.Text = String.Format("{0:c}", _delivery) + " Delivery Option"; }
-                //else
-                //{
-                //    lblDelivery.Text = "Store Delivery";
-                //    cb1.Visible = false;
-                //    txtDeliveryPrice.Enabled = false;
-                //}
 
+                if (_delivery > 0) cb1.Checked = true;
                 _demoPrice = 0;
                 txtDemoPrice.Text = String.Format(MoneyFormat, _demoPrice);
                 txtDeliveryPrice.Text = String.Format(MoneyFormat, _delivery);
                 txtBasicInst.Text = String.Format(MoneyFormat, 00.00);
-                if (_orderType == "M") txtOrderNumb.Text = SetOrderNumber("M", _storeNumb);
+                if (_orderType == "M")
+                {
+                    txtOrderNumb.Text = SetOrderNumber("M", _storeNumb);
+                    txtDemoPrice.Text = String.Format(MoneyFormat, 00.00);
+                    txtDeliveryPrice.Text = String.Format(MoneyFormat, 00.00);
+                    txtBasicInst.Text = String.Format(MoneyFormat, 65.00);
+                    txtOrderPrice.Text = String.Format(MoneyFormat, 65.00);
+                    txtPurchasePrice.Text = String.Format(MoneyFormat, 00.00);
+                    txtActual.Text = String.Format(MoneyFormat, 00.00);
+                    cb1.Checked = false;
+                }
                 else
                     txtOrderNumb.Text = SetOrderNumber(_orderType.Substring(0, 3), _storeNumb);
             }

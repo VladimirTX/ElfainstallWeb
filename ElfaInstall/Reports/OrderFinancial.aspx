@@ -64,7 +64,7 @@
                     <asp:ListItem>Ellen DeGeneres Show</asp:ListItem>
                     <asp:ListItem>Fall for elfa</asp:ListItem>
                     <asp:ListItem>Just for You</asp:ListItem>
-                    <asp:ListItem>Man in Desert</asp:ListItem>
+                    <asp:ListItem>VIP</asp:ListItem>
                     <asp:ListItem>PR</asp:ListItem>
                     <asp:ListItem>Service</asp:ListItem>
                     <asp:ListItem>Store Comp</asp:ListItem>
